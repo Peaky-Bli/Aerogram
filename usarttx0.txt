@@ -1,0 +1,32 @@
+INCLUDE Necessary Header files
+SET CPU Clock Speed
+SET Baudrate Macros and Formulas
+SET Buffer size
+DECLARE Buffer array, SerialReadPosition and serialWritePos
+
+Append Function//Concatenate the Character
+    Write the char C in the right position
+    IF end of array
+        then Write from Beginning
+    ENDIF
+
+SerialWrite Function- Take the char and write String on terminal
+    FOR all the the character length
+    Append/Concatenate the Character
+    ENDFOR
+Interrupt Subroutine-
+    IF Read position not equal to Write position
+    Then Write in UDR reg 
+    Increment position
+    ENDIF
+    IF SerialReadPosition greater than Buffer size
+    then increment the SerialReadPosition
+END Interrupt
+
+MAIN Function
+    Enable the transmission Bit for 8 bit address
+    Firing the Interrupt
+    Writing the Character 
+While Infinte Loop
+Endwhile
+ENDMAIN
